@@ -4,6 +4,7 @@
   "description": "fullstack blog app",
   "main": "server.js",
   "scripts": {
+    "build": "echo 'No build step necessary' && exit 0",
     "server": "nodemon server.js",
     "start": "node server.js"
   },
