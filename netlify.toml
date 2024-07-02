@@ -1,8 +1,7 @@
 [build]
-  command = "npm run build"
-  publish = "."
+  publish = "public"
+  command = "npm install && npm run build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[server]
+  command = "npm run server"
+  port = 3000

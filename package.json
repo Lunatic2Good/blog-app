@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "fullstack blog app",
   "main": "server.js",
-  "scripts": {
-    "build": "echo 'No build step necessary' && exit 0",
-    "server": "nodemon server.js",
-    "start": "node server.js"
-  },
+    "scripts": {
+      "start": "node server.js",
+      "server": "nodemon server.js",
+      "build": "npm run server"
+    },
   "keywords": [
     "blog",
     "nodejs"
