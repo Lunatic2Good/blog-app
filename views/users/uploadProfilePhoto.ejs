@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/c66cad032b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/uploadPhoto.css" />
+    <title>Upload Profile Photo</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <%-include('../partials/navbar.ejs') %>
+    <div class="form-container">
+      <!-- icon -->
+      <h1>Upload Profile photo</h1>
+      <p>
+        <!-- upload icon -->
+      </p>
+      <%if(typeof error !== 'undefined' && error) {%>   <!--also add typeof condition-->
+        <small class="error">
+          <i class="fas fa-exclamation-circle"></i>
+          <%=error%>
+        </small>
+      <%}%>
+      <form action="/api/v1/users/profile-photo-upload?_method=PUT" method="POST" enctype="multipart/form-data" >   <!--as put/delete not available, we use methodOverride and enctype to form-->
+        <label for="email">Select Image</label>
+        <input type="file" name="profile" />    <!--name is upload.single('wala_name')-->
+        <button type="submit">
+          <i class="fas fa-upload"></i>
+        </button>
+      </form>
+    </div>
+    <!-- footer -->
+    <%-include('../partials/footer.ejs') %>
+  </body>
+</html>
